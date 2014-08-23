@@ -138,12 +138,14 @@ mode        : selfcontained # {standalone, draft}
 - `DSC2014Tutorial` R社群為了這次Tutorial製作的套件，所有的教材都在這了
 
 ```
-deps <- available.packages("http://54.92.61.128/R")[1,"Depends"]
+deps <- available.packages("http://taiwanrusergroup.github.io/R/src/contrib")[1,"Imports"]
 pkgs <- strsplit(gsub("\\s", "", deps), ",")[[1]]
-for(pkg in pkgs) {
-  install.packages(pkg)
+for(i in seq_along(pkgs)) {
+  # You can change your favorite repository
+  if (require(pkgs[i], character.only = TRUE)) next
+  install.packages(pkgs[i], repo = "http://cran.csie.ntu.edu.tw")
 }
-install.packages('DSC2014Tutorial', repo = 'http://54.92.61.128/R', type = 'source')
+install.packages('DSC2014Tutorial', repo = 'http://taiwanrusergroup.github.io/R', type = 'source')
 ```
 
 安裝之後, 輸入以下指令就可以打開投影片:
@@ -617,7 +619,7 @@ GDP = read.table(file=ETL_file("GDP.txt"),sep=",",stringsAsFactors=F,header=F)
 
 
 ```
-GDP_part = GDP[5:137,]
+GDP_part = GDP[5:136,]
 ```
 
 ### 別忘了改上欄位名稱
