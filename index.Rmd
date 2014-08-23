@@ -921,8 +921,10 @@ eg3_3 = summarise(group_by(eg3_2,year),count = n_distinct(bank_nm))
 eg4 = summarise(group_by(Cl_info_part2,time),
        val = max(mortgage_bal))
 
-eg5 = summarise(group_by(Cl_info_part2,time),
-         val = last(bank_nm,order_by=mortgage_bal))
+
+
+eg5_1 = arrange(Cl_info_part2,time,desc(mortgage_bal))
+eg5_2 =summarise(group_by(eg5_1,time),val = first(bank_nm))
 
 
 eg6_1 = arrange(Cl_info_part2,time,desc(mortgage_bal))
