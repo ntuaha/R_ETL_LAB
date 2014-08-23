@@ -1228,9 +1228,9 @@ getURL("https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.cs
 - 讀檔案 (Windows)
 
 ```
-DF = read.table(sep=",", header=TRUE,            
-file= getURL("https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv")
-)
+DF = read.csv(sep=",", header=TRUE, 
+file="https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv",
+fileEncoding="UTF-8")
 ```
 
 

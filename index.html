@@ -1833,9 +1833,9 @@ getURL(&quot;https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_oth
 <li>讀檔案 (Windows)</li>
 </ul>
 
-<pre><code>DF = read.table(sep=&quot;,&quot;, header=TRUE,            
-file= getURL(&quot;https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv&quot;)
-)
+<pre><code>DF = read.csv(sep=&quot;,&quot;, header=TRUE, 
+file=&quot;https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv&quot;,
+fileEncoding=&quot;UTF-8&quot;)
 </code></pre>
 
   </article>
