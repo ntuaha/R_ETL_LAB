@@ -302,7 +302,8 @@ for(i in seq_along(pkgs)) {
   if (require(pkgs[i], character.only = TRUE)) next
   install.packages(pkgs[i], repo = &quot;http://cran.csie.ntu.edu.tw&quot;)
 }
-install.packages(&#39;DSC2014Tutorial&#39;, repo = &#39;http://taiwanrusergroup.github.io/R&#39;, type = &#39;source&#39;)
+install.packages(&#39;DSC2014Tutorial&#39;, 
+    repo = &#39;http://taiwanrusergroup.github.io/R&#39;, type = &#39;source&#39;)
 </code></pre>
 
 <p>安裝之後, 輸入以下指令就可以打開投影片:</p>
