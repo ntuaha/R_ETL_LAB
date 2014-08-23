@@ -447,7 +447,7 @@ ETL_file(&quot;cl_info_other.csv&quot;)
   <article data-timings="">
     <p>至少要記得的 <code>read.table</code></p>
 
-<pre><code>Cl_info = read.table(file=&#39;檔案路徑&#39;,sep=&quot;,&quot;,stringsAsFactors=F,header=T)
+<pre><code>Cl_info = read.table(file=ETL_file(&quot;cl_info_other.csv&quot;),sep=&quot;,&quot;,stringsAsFactors=F,header=T)
 </code></pre>
 
 <ul>
@@ -1818,13 +1818,22 @@ library(RCurl)
 </code></pre>
 
 <ul>
-<li>讀檔案</li>
+<li>讀檔案 (非Windows)</li>
 </ul>
 
 <pre><code>DF = read.table(sep=&quot;,&quot;, header=TRUE,            
 file= textConnection(
 getURL(&quot;https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv&quot;)
 ))
+</code></pre>
+
+<ul>
+<li>讀檔案 (Windows)</li>
+</ul>
+
+<pre><code>DF = read.table(sep=&quot;,&quot;, header=TRUE,            
+file= getURL(&quot;https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv&quot;)
+)
 </code></pre>
 
   </article>

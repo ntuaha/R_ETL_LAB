@@ -241,7 +241,7 @@ ETL_file("cl_info_other.csv")
 
 至少要記得的 `read.table`
 ```
-Cl_info = read.table(file='檔案路徑',sep=",",stringsAsFactors=F,header=T)
+Cl_info = read.table(file=ETL_file("cl_info_other.csv"),sep=",",stringsAsFactors=F,header=T)
 ```
 - 輸出形態為`Data Frame`
 - file 就是指讀入的檔案路徑
@@ -1214,7 +1214,7 @@ install.packages("RCurl")
 library(RCurl)
 ```
 
-- 讀檔案
+- 讀檔案 (非Windows)
 
 ```
 DF = read.table(sep=",", header=TRUE,            
@@ -1222,6 +1222,15 @@ file= textConnection(
 getURL("https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv")
 ))
 ```
+
+- 讀檔案 (Windows)
+
+```
+DF = read.table(sep=",", header=TRUE,            
+file= getURL("https://raw.githubusercontent.com/ntuaha/TWFS/master/db/cl_info_other.csv")
+)
+```
+
 
 
 
