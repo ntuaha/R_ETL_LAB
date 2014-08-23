@@ -147,6 +147,7 @@ for(i in seq_along(pkgs)) {
 }
 install.packages('DSC2014Tutorial', 
     repo = 'http://taiwanrusergroup.github.io/R', type = 'source')
+library(DSC2014Tutorial)
 ```
 
 安裝之後, 輸入以下指令就可以打開投影片:
