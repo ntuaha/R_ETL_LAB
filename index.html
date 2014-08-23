@@ -512,6 +512,7 @@ str(Cl_info)
     <h3>將資料讀入</h3>
 
 <pre><code>library(DSC2014Tutorial)
+library(dplyr)
 Cl_info = read.table(file=ETL_file(&#39;cl_info_other.csv&#39;),header=T,sep=&quot;,&quot;,stringsAsFactors=F)
 Cl_info_part = mutate(Cl_info,data_dt = as.POSIXct(data_dt),
                  bank_code = as.factor(bank_code),etl_dt = as.POSIXct(etl_dt))

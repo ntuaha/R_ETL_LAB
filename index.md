@@ -285,6 +285,7 @@ str(Cl_info)
 
 ```
 library(DSC2014Tutorial)
+library(dplyr)
 Cl_info = read.table(file=ETL_file('cl_info_other.csv'),header=T,sep=",",stringsAsFactors=F)
 Cl_info_part = mutate(Cl_info,data_dt = as.POSIXct(data_dt),
                  bank_code = as.factor(bank_code),etl_dt = as.POSIXct(etl_dt))
